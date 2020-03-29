@@ -22,17 +22,16 @@ public class RetirementCalculator {
         String yearInThisMoment = year.toString();
         int yearNow = myStringToNumber(yearInThisMoment);
         int  yearsUntilRetire = yearNow + ageUntilRetire;
-        if (ageUntilRetire < 0)
-
-            System.out.println("You already can retire");
-        System.exit(0);
-
-
+        if (ageUntilRetire < 0) {
+            System.out.println("You already can retire");}
+         else{
         System.out.println("You have " + ageUntilRetire + " years left until you can retire.");
         System.out.println("It's " + yearInThisMoment + ", so you can retire in " + yearsUntilRetire);
+    }
 
     }
-    private static int myStringToNumber (String line){ int answer = 0, factor = 1;
+    private static int myStringToNumber (String line){
+        int answer = 0, factor = 1;
         for (int i = line.length() - 1; i >= 0; i--){
             answer += (line.charAt(i) - '0') * factor;
             factor *= 10;
