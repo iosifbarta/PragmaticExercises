@@ -9,14 +9,14 @@ public class TemperatureConverter {
         String cOrF = celsiusOrFahrenheit();
         if(cOrF.equalsIgnoreCase("F")){
         System.out.println("Please enter the temperature in Celsius: ");
-        int temp = getTemperature(0);
-        int fahrenheit = (temp * 9/5)+32;
+        double temp = getTemperature(0);
+        double fahrenheit = (temp * 9/5)+32;
             System.out.println("The temperature in Fahrenheit is: "+fahrenheit);
         }
         if(cOrF.equalsIgnoreCase("C")){
             System.out.println("Please enter the temperature in Fahrenheit: ");
-            int temp = getTemperature(0);
-            int celsius = (temp -32)*5/9;
+            double temp = getTemperature(0);
+            double celsius = (temp -32)*5/9;
             System.out.println("The temperature in Celsius is: "+celsius);
         }
 
@@ -28,6 +28,7 @@ public class TemperatureConverter {
             letter = ScannerUtils.nextLine();
             if (!letter.equalsIgnoreCase("C") && !letter.equalsIgnoreCase("F")){
                 System.out.println("Please enter \"C\" or \"F\".");
+                return celsiusOrFahrenheit();
             }
         }catch (Exception e){
             System.out.println("Please enter \"C\" or \"F\".");
@@ -36,9 +37,9 @@ public class TemperatureConverter {
         System.out.println("Your choice is "+ letter);
         return letter;
     }
-    public static int getTemperature (int temp){
+    public static double getTemperature (double temp){
        try {
-           temp = ScannerUtils.nextSingleInt();
+           temp = ScannerUtils.nextSingleDouble();
        }catch (Exception e){
            System.out.println("Please enter a valid number");
            return getTemperature(temp);
