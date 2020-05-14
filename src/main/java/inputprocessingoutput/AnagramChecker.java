@@ -26,9 +26,10 @@ public class AnagramChecker {
         char[] secondWord = secondString.toCharArray();
         Arrays.sort(firstWord);
         Arrays.sort(secondWord);
-        for (int i=0; i<lenght1; i++)
-        {if (firstString.charAt(i) != secondString.charAt(i))
-                return false;
+        for (int i=0; i<lenght1; i++) {
+            if (!Arrays.equals(firstWord,secondWord))
+            return false;
         }return true;
+
     }
 }
