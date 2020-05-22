@@ -10,6 +10,7 @@ public class GuessTheNumberGame {
         System.out.println("Let's play Guess the Number.");
         int level = pickLevel();
         int number = generateNumber(level);
+        System.out.println(number);
 //        System.out.println(number);
         System.out.println("I have my number. What's your guess?");
         game(number);
@@ -71,10 +72,10 @@ public class GuessTheNumberGame {
         if (countInputs == 1){
             System.out.println("“You’re a mind reader!”");
         }
-        if (countInputs==2 || countInputs==3){
+        else  if (countInputs==2 || countInputs==3){
             System.out.println("“Most impressive.”");
         }
-        if (countInputs==4 || countInputs<=6){
+        else if (countInputs ==4 || countInputs== 5 ||countInputs==6){
             System.out.println("“You can do better than that.”");
         }else System.out.println("“Better luck next time.”");
     }
